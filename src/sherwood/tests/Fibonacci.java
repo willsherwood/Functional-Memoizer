@@ -38,10 +38,10 @@ public class Fibonacci {
 
     public void bigIntTest() {
         calls = 0;
+        System.out.println(new Memoized<>(bigFib).apply(20L) + " in " + calls + " calls.");
+        calls = 0;
         System.out.println(new Memoized<>(bigFib).apply(200L) + " in " + calls + " calls.");
         calls = 0;
-        System.out.println(new Memoized<>(bigFib).apply(2000L) + " in " + calls + " calls.");
-        calls = 0;
-        System.out.println(new Memoized<>(bigFib).apply(2500L) + " in " + calls + " calls.");
+        System.out.println(new Memoized<>(bigFib).apply(1000L) + " in " + calls + " calls.");
     }
 }

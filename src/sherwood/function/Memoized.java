@@ -21,10 +21,6 @@ public class Memoized<T, R> implements Function<T, R> {
 
     @Override
     public R apply (T t) {
-        if (dict.containsKey(t))
-            return dict.get(t);
-        R r = original.apply(t);
-        dict.put(t, r);
-        return r;
+        return dict.computeIfAbsent(t, original);
     }
 }
